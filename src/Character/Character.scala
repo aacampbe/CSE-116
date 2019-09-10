@@ -21,12 +21,12 @@ class Character {
     }
   }
   def attack(player2: Character, defense: Int): Unit = {
-    if(player2.defense < this.beam){
+    if(defense < this.beam){
       takeDamage(this.beam)
     }
   }
   def spiritAttack(player2: Character, spiritDefense: Int): Unit = {
-    if(player2.spiritShield < this.spiritBeam){
+    if(spiritDefense < this.spiritBeam){
       takeDamage(this.spiritBeam)
       mp = mp - 50
     }
