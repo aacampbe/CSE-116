@@ -26,7 +26,7 @@ class Character {
   def spiritAttack(player2: Character, spiritDefense: Int): Unit = {
     if(spiritDefense < this.spiritBeam){
       player2.takeDamage(this.spiritBeam)
-      mp = mp - 50
+      this.mp = this.mp - 50
     }
     if(mp == 0){
       spiritBeam = 0

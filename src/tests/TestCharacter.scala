@@ -18,7 +18,6 @@ class TestCharacter extends FunSuite {
     val spiritDefense: Int = 40
     player.spiritAttack(player2, spiritDefense)
     assert(player2.hp == 240)
-    assert(player2.mp == 350)
-
+    assert(player.mp == 350)
   }
 }
