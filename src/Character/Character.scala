@@ -1,7 +1,5 @@
 package Character
-
 class Character {
-
   var beam: Int = 10
   var defense: Int = 60
   var spiritBeam: Int = 50
@@ -20,23 +18,18 @@ class Character {
       dead = false
     }
   }
-  def attack(player2: Character, defense: Int): Unit = {
-    if(defense < this.beam){
-      takeDamage(this.beam)
+  def attack(player2: Character, Defense: Int): Unit = {
+    if(Defense < this.beam){
+      player2.takeDamage(this.beam)
     }
   }
   def spiritAttack(player2: Character, spiritDefense: Int): Unit = {
     if(spiritDefense < this.spiritBeam){
-      takeDamage(this.spiritBeam)
+      player2.takeDamage(this.spiritBeam)
       mp = mp - 50
     }
     if(mp == 0){
       spiritBeam = 0
     }
   }
-
-
-
-
-
 }
