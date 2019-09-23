@@ -8,14 +8,16 @@ class Character {
   var health: Int = hp
   var mp: Int = 400
   var magicPoints: Int = mp
-  var dead: Boolean = true
+  var alive: Boolean = true
+  var exp: Int = 0
+  var level: Int = 0
   def takeDamage(damage: Int): Unit = {
-    hp = hp - damage
-    if((hp - damage) <= 0){
-      dead = true
+    health = health - damage
+    if((health - damage) <= 0){
+      alive = false
     }
     else{
-      dead = false
+      alive = true
     }
   }
   def attack(player2: Character, Defense: Int): Unit = {
@@ -26,10 +28,18 @@ class Character {
   def spiritAttack(player2: Character, spiritDefense: Int): Unit = {
     if(spiritDefense < this.spiritBeam){
       player2.takeDamage(this.spiritBeam)
-      this.mp = this.mp - 50
+      this.magicPoints = this.magicPoints - 50
     }
     if(mp == 0){
       spiritBeam = 0
     }
+  }
+  def gainExp(player2: Character): Unit = {
+    if(!player2.alive){
+      this.exp += 100
+    }
+  }
+  def nextLevel(): Unit = {
+    this.level = (this.exp * .01).toInt
   }
 }

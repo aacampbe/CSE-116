@@ -8,16 +8,16 @@ class TestCharacter extends FunSuite {
     val player: Character = new Character
     val player2: Character = new Character
     player.takeDamage(player2.beam)
-    assert(player.hp == 290)
+    assert(player.health == 290)
     val lethal: Int = 310
     player.takeDamage(lethal)
-    assert(player.dead === true)
+    assert(player.alive === false)
     val defense: Int = 5
     player.attack(player2, defense)
-    assert(player2.hp == 290)
+    assert(player2.health == 290)
     val spiritDefense: Int = 40
     player.spiritAttack(player2, spiritDefense)
-    assert(player2.hp == 240)
-    assert(player.mp == 350)
+    assert(player2.health == 240)
+    assert(player.magicPoints == 350)
   }
 }
