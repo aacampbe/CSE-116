@@ -1,5 +1,4 @@
 package Character
-
 class Party(characters: List[Character]) {
   def charactersDefeat(enemies: List[Character]): Unit = {
     for(character <- characters){

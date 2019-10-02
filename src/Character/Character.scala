@@ -1,5 +1,5 @@
 package Character
-class Character {
+abstract class Character {
   var beam: Int = 10
   var defense: Int = 60
   var spiritBeam: Int = 50
@@ -13,7 +13,7 @@ class Character {
   var level: Int = 0
   def takeDamage(damage: Int): Unit = {
     health = health - damage
-    if((health - damage) <= 0){
+    if(health <= 0){
       alive = false
     }
     else{
@@ -42,4 +42,6 @@ class Character {
   def nextLevel(): Unit = {
     this.level = (this.exp * .01).toInt
   }
+  def battleOptions(): List[String]
+  def takeAction(action: String, character: Character): Unit
 }
