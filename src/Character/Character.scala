@@ -1,5 +1,7 @@
 package Character
-abstract class Character {
+abstract class Character(var location: PhysicsVector) {
+  var warriors: Map[String, Warrior] = Map()
+  var wizards: Map[String, Wizard] = Map()
   var beam: Int = 10
   var defense: Int = 60
   var spiritBeam: Int = 50
